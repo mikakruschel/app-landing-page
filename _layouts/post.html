@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<body class="h-screen flex flex-col pt-12 bg-gray-100 dark:bg-black dark:text-white">
+    <a href="{{ site.baseurl }}" class="block m-auto w-16 mb-5">
+        <img class="filter drop-shadow-xl w-full" style="border-radius: 22.5%;" src="{{ site.app_icon }}"
+            alt="app icon" />
+    </a>
+
+    <section class="px-6 h-full text-center max-w-prose m-auto markdown">
+        {{ content }}
+    </section>
+
+    {% include footer.html %}
+</body>

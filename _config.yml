@@ -1,0 +1,56 @@
+app_name: Awesome App
+app_subtitle: Short tagline
+app_download: https://apps.apple.com/us/app/flashtex-flashcards/id1534437697
+app_github: https://github.com/mikakruschel/app-landing-page
+app_id: 1534437697
+email: mail@kruschel.dev
+app_icon: /assets/icon.png
+favicon: /assets/icon.png
+
+made_by: // Made by [Miká Kruschel](https://kruschel.dev)
+
+links:
+  - title: AppStore Connect Widget
+    url: https://ac-widget.xyz
+
+app_description: |
+    Create and deploy an iOS app landing page with Jekyll
+
+    ## Usage
+
+    1. Fork this repo or use it as a template
+    2. Edit `_config.yml` and enter the details for your app
+    3. Add screenshots (in `assets/screenshots/`) and app icon (in `assets` and add path in `_config.yml`)
+    4. Edit or remove Privacy Policy (`_pages/privacypolicy.md`)
+    5. Deploy to Vercel or Netlify ([guide](https://jekyllrb.com/resources/#guides))
+    
+    <br>This template is open source and can be found at [GitHub](https://github.com/mikakruschel/app-landing-page).
+
+####################################################
+### Jekyll Configuration. No need to touch this. ###
+####################################################
+
+plugins:
+  - jekyll-postcss
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package-lock.json
+  - README.md
+  - postcss.config.js
+  - .gitignore
+  - node_modules
+
+markdown: kramdown
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+defaults:
+  - scope:
+      path: "assets/screenshots"
+    values:
+      screenshot: true

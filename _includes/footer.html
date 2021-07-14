@@ -1,0 +1,21 @@
+<footer
+    class="flex flex-wrap-reverse gap-x-20 justify-between bg-white dark:bg-gray-900 rounded-t-2xl max-w-screen-lg mx-auto mt-10 p-10">
+    {% if site.made_by %}
+    {{ site.made_by | markdownify }}
+    {% endif %}
+    <div class="flex gap-6 mb-2 justify-between sm:w-auto w-full text-center">
+        {% if site.app_github %}
+        <a href="{{ site.app_github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        {% endif %}
+
+        {% for link in site.links %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.title }}</a>
+        {% endfor %}
+
+        {% for page in site.pages %}
+        {% if page.include_in_footer == true %}
+        <a href="{{ page.url | relative_url }}" target="_self">{{ page.title }}</a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</footer>

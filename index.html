@@ -1,0 +1,40 @@
+---
+layout: page
+---
+
+<section class="flex flex-col sm:flex-row mt-16 mb-16 justify-center items-center gap-x-10 max-w-screen-md m-auto">
+    <img class="h-auto filter drop-shadow-xl w-1/5" style="border-radius: 22.5%;"
+        src="{{ site.app_icon | relative_url }}" alt="app icon" />
+    <div class="m-3 text-center sm:text-left">
+        <h1 class="text-4xl font-bold">{{ site.app_name }}</h1>
+        <p class="text-xl font-semibold mb-1">{{ site.app_subtitle }}</p>
+        <div class="flex space-x-2 max-w-full">
+            <a href="{{ site.app_download }}" target="_blank" rel="noopener noreferrer">
+                <img class="h-14" src="assets/apple-badge.png" alt="download" />
+            </a>
+            {% if site.app_github %}
+            <a href="{{ site.app_github }}" target="_blank" rel="noopener noreferrer">
+                <img class="h-14" src="assets/github-badge.png" alt="open on github" />
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="max-w-screen-lg m-auto">
+    <h2 class="ml-6 text-2xl font-bold">Screenshots</h2>
+    <div class="flex gap-x-7 overflow-x-scroll">
+        {% assign screenshots = site.static_files | where: "screenshot", true %}
+        {% for img in screenshots %}
+        <img class="{% if forloop.first %}ml-7{% endif %} {% if forloop.last %}mr-7{% endif %} w-48 h-auto shadow rounded-2xl transform transition duration-300 hover:scale-105 my-7"
+            src="{{ img.path | relative_url }}" alt="{{ img.name }}">
+        {% endfor %}
+    </div>
+</section>
+
+{% if site.app_description %}
+<section class="max-w-screen-lg m-auto px-6 markdown">
+    <h2 class="text-2xl font-bold mb-3">Description</h2>
+    {{ site.app_description | markdownify }}
+</section>
+{% endif %}

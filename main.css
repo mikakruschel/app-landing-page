@@ -1,0 +1,34 @@
+---
+---
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+.markdown h1 {
+    @apply text-4xl font-bold mb-2;
+}
+
+.markdown h2 {
+    @apply font-semibold mt-4;
+}
+
+.markdown h3 {
+    @apply font-semibold mt-4;
+}
+
+.markdown a {
+    @apply whitespace-nowrap text-blue-900 dark:text-blue-200;
+}
+
+a {
+    @apply text-blue-900 dark:text-blue-200;
+}
+
+ul {
+    @apply list-disc list-outside ml-4;
+}
+
+ol {
+    @apply list-decimal list-outside ml-4;
+}
